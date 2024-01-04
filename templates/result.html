@@ -1,0 +1,34 @@
+<!-- result.html -->
+<table>
+    <thead>
+      <tr>
+        {% for column_name, _ in columns_data.items %}
+          <th>{{ column_name }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+
+
+
+    <!-- <tbody>
+      {% for i in columns_data|dictsort:"key" %}
+        {% for j in i.1 %}
+          <tr>
+            <td>{{ j }}</td>
+          </tr>
+        {% endfor %}
+      {% endfor %}
+    </tbody> -->
+
+    <tbody>
+        {% for i in range(columns_data[columns_data.keys|first]|length) %}
+          <tr>
+            {% for _, column_data in columns_data.items %}
+              <td>{{ column_data.i }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+
+  </table>
+  

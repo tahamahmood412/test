@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Questions</title>
+</head>
+<body>
+    <h1>Random Questions</h1>
+    <!-- <a href="{% url 'random_questions' subject_id=1 chapter_number='Chapter 1' %}">Display Random Questions</a> -->
+
+    
+    <h2>{{ subject.name }} - Chapter: {{ chapter.title }}</h2>
+    
+    <h3>Short Questions:</h3>
+    <ul>
+        {% for question in random_short_questions %}
+            <li>{{ question.short_question }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Long Questions:</h3>
+    <ul>
+        {% for question in random_long_questions %}
+            <li>{{ question.long_question }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Numerical Questions:</h3>
+    <ul>
+        {% for question in random_numerical_questions %}
+            <li>{{ question.numerical_question }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
